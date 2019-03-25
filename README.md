@@ -26,4 +26,3 @@ For my Initial Commit I have pushed up my `MVP`. It has the ability to create ne
 I have the `API` working with `Micro` and will be porting it to `Express.js`.  The database is MongoDB and the data structure is solid. It is structured into two collections. One is for lists and the other for tasks. All of my tasks are tagged with a listID so that one task can only be associated with one list. But 1 board will be able to have multiple lists. 
 
 
-
