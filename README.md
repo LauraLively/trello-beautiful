@@ -19,7 +19,7 @@ The packages that I used in this project are:
  - Material UI
  - react-bootstrap
  - react-fontawesome
------
+---
 ### Initial github Commit
 For my Initial Commit I have pushed up my `MVP`. It has the ability to create new lists and tasks under specific lists. Everything can be updated and deleted. I have not gotten the drag and drop functionality working yet. This is just my bare bones to do list that has the styling of a trello board. 
 
