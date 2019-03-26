@@ -2,9 +2,16 @@ import React, { Component } from 'react'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import UpdateButton from './UpdateCardButton';
-import DeleteCardButton from './DeleteCardButton';
+import Button from '@material-ui/core/Button';
+import {apiURL} from '../config';
 
 export class TrelloCard extends Component {
+    handleDelete = async () => {
+        await fetch(`${apiURL}/task/${this.props.task._id}`, {
+            method: 'DELETE'
+        }).then(res  => console.log(res))
+        .catch (err => console.log(err))
+    };
     render() {
         // I made this.props.task here and it needs to be followed through the rest of the components.
         const task = this.props.task;
@@ -20,7 +27,12 @@ export class TrelloCard extends Component {
                 {/* this is where this button is instatiated go down the chain to figure out how it works */}
                 {/* this is where the this.props.task needs to go  */}
                 <UpdateButton task={this.props.task} /> 
-                <DeleteCardButton/>
+                <Button style={styles.deleteButton}
+                        variant="outlined"
+                        size="sm"
+                        onClick={this.handleDelete} >
+                        Delete
+                </Button >
                 </div>
             </Card>
         )
@@ -37,6 +49,11 @@ const styles = {
     }, 
     cardContent : {
         padding:5,
+    },
+    deleteButton: {
+        margin: 8,
+        justifyContent: "flex-end",
     }
 };
+    
 export default TrelloCard;
